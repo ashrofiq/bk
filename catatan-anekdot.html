@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1a73e8">
+<title>Aplikasi Layanan BK</title>
+<link rel="stylesheet" href="app.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body data-start-page="anekdot">
+<div id="login">
+  <div class="lcard">
+    <div class="logo"><img src="https://www.smanklirong.sch.id/storage/school-identity/01M1GX0S27524DBWJKADF8FMCA.jpg" alt="Logo" onerror="this.style.display='none'"></div>
+    <h1>Aplikasi Layanan BK</h1>
+    <p class="sub-title">SMAN 1 KLIRONG</p>
+    <p class="sub-title2">Tahun Pelajaran 2026/2027</p>
+    <div class="err" id="loginErr"></div>
+    <div class="lhint">💡 <b>Siswa:</b> isi <b>nama depan</b> sebagai username dan <b>tanggal lahir</b> sebagai password dengan format <b>YYYY-MM-DD</b> (contoh: 2008-04-23). Akun guru tetap memakai username dan password guru.</div>
+    <div class="fg"><label>Username / Nama Depan Siswa</label><input id="lgUser" placeholder="Username guru atau nama depan siswa" autocomplete="username"></div>
+    <div class="fg"><label>Password / Tanggal Lahir Siswa</label><input id="lgPass" type="text" placeholder="Password guru / YYYY-MM-DD siswa" autocomplete="current-password" inputmode="text"></div>
+    <button class="btn" style="width:100%;padding:12px" onclick="doLogin()">Masuk</button>
+    <div class="small" style="text-align:center;margin-top:18px">© SMA Negeri 1 Klirong</div>
+  </div>
+</div>
+<div id="app">
+  <div class="top">
+    <div style="display:flex;align-items:center;gap:10px">
+      <button class="burger" onclick="document.getElementById('side').classList.toggle('open')">☰</button>
+      <div class="brand"><span>Aplikasi Layanan BK</span></div>
+    </div>
+    <div class="who"><span id="whoTxt"></span><button class="btn-sm" id="themeBtn" onclick="toggleTheme()" title="Mode Malam / Terang">🌙</button><button class="btn2 btn-sm" onclick="logout()">Keluar</button></div>
+  </div>
+  <div class="layout"><nav class="side" id="side"></nav><main class="main" id="main"></main></div>
+  <button id="jurnalFloat" class="jurnal-float" onclick="dashInputJurnal()" title="Input Jurnal Harian">📔 Jurnal Harian</button>
+  <button id="backBtn" class="back-float" onclick="goBack()" title="Kembali ke halaman sebelumnya">←</button>
+</div>
+<div id="toast"></div><div class="ov" id="ov"><div class="modal" id="modal"></div></div>
+<script src="app.js"></script>
+</body></html>
